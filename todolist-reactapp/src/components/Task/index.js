@@ -1,7 +1,11 @@
-function Task() {
+function Task({ tasks }) {
     return (
         <ul>
-            <li>test</li>
+            {
+                tasks.map((task) => (
+                    <li key={ task.id } >{ task.taskName }</li>
+                ))
+            }
         </ul>
     )
 };

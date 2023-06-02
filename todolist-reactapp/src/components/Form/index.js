@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Form() {
+function Form({ newTask }) {
     const [value, setValue] = useState("");
 
     const handleChange = (event) => {
@@ -11,7 +11,7 @@ function Form() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log(value);
+        newTask(value);
         setValue("");
     };
 
