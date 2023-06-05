@@ -10,6 +10,7 @@ import Count from '../Count';
 function ToDoList() {
   const [ taskList, setTasksList ] = useState(data);
 
+
   const findId = () => {
     const ids = taskList.map((task) => task.id);
     return Math.max(...ids);
@@ -25,13 +26,34 @@ function ToDoList() {
   };
 
   
+  const statusTask = (event) => {
+    const id = Number(event.target.name);
+    const tasksModified = taskList.map((task) => {
+        if (id === task.id) {
+          return {
+            ...task,
+            done: !task.done,
+          }
+        }
+        return task;
+      });
+      
+    setTasksList(tasksModified);
+};
+
+
+  
   return (
     <div className="ToDoList">
+      <Form newTask={ addTask } />
+      
       <Count tasks={ taskList } />
 
-      <Form newTask={ addTask } />
-
-      <Task tasks={ taskList } deleteTask={ deleteTask } />
+      <Task 
+        tasks={ taskList } 
+        deleteTask={ deleteTask } 
+        statusTask={ statusTask }
+      />
     </div>
   );
 }
