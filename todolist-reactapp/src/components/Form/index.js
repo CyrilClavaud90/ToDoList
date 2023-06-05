@@ -4,7 +4,6 @@ function Form({ newTask }) {
     const [value, setValue] = useState("");
 
     const handleChange = (event) => {
-        console.log(event.target.value);
         setValue(event.target.value);
     };
 
@@ -25,6 +24,9 @@ function Form({ newTask }) {
                 value={ value }
                 onChange={ handleChange }
             />
+            <button type='submit' >
+                Add a task
+            </button>
         </form>
     )
 };

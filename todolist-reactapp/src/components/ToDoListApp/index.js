@@ -4,6 +4,8 @@ import data from '../../data';
 
 import Form from "../Form";
 import Task from "../Task";
+import Count from '../Count';
+
 
 function ToDoList() {
   const [ taskList, setTasksList ] = useState(data);
@@ -14,17 +16,22 @@ function ToDoList() {
   };
 
   const addTask = (task) => {
-    console.log(task);
     setTasksList([ ...taskList, {id: findId() + 1, taskName: task, done: false}])
   };
 
+  const deleteTask = (event) => {
+    const id = Number(event.target.name);
+    setTasksList( taskList.filter(task => task.id !== id) );
+  };
+
+  
   return (
     <div className="ToDoList">
-      <h1>My ToDo List</h1>
+      <Count tasks={ taskList } />
 
       <Form newTask={ addTask } />
 
-      <Task tasks={ taskList } />
+      <Task tasks={ taskList } deleteTask={ deleteTask } />
     </div>
   );
 }
