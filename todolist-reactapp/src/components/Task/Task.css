@@ -1,0 +1,47 @@
+ul {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+.task-input {
+    margin-right: 0.5rem;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3rem;
+    margin: 1rem 0;
+    border-radius: 2px;
+    font-size: 1.2rem;
+    background-color: azure;
+    color: #073262;
+}
+
+.task {
+    padding: 0 0 0 0.5rem;
+    text-align: left;
+}
+
+.task-done {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.task-button {
+    padding: 0 0.5rem 0 0;
+    border-radius: 2px;
+    border: none;
+    background-color: azure;
+}
+
+.task-button:hover {
+    cursor: pointer;
+}
+
+.task-button_icon {
+    height: 1.8rem;
+}
