@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import './Form.css';
+
 function Form({ newTask }) {
     const [value, setValue] = useState("");
 
@@ -16,15 +18,17 @@ function Form({ newTask }) {
 
     return(
         <form 
+            className='form'
             onSubmit={ handleSubmit }
         >
             <input 
                 type="text"
-                placeholder="Add a task ..."
+                className='form-input'
+                placeholder="New task ..."
                 value={ value }
                 onChange={ handleChange }
             />
-            <button type='submit' >
+            <button type='submit' className='form-button' >
                 Add a task
             </button>
         </form>

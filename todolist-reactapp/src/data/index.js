@@ -12,6 +12,6 @@ export default [
     {
         id: 2,
         taskName: "Take out the trash",
-        done: false,
+        done: true,
     },
 ];

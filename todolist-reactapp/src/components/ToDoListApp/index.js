@@ -6,6 +6,8 @@ import Form from "../Form";
 import Task from "../Task";
 import Count from '../Count';
 
+import './ToDoListApp.css';
+
 
 function ToDoList() {
   const [ taskList, setTasksList ] = useState(data);

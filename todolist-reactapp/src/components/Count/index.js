@@ -1,3 +1,4 @@
+import './Count.css';
 function Count({ tasks }) {
     const doneTask = () => {
         const tasksDone = tasks.filter(task => task.done === false);
@@ -5,8 +6,8 @@ function Count({ tasks }) {
     };
 
     return(
-        <div>
-            <p>
+        <div className="count" >
+            <p className='count-text' >
                 { doneTask() } task{ doneTask() > 1 ? "s" : "" } remain
             </p>
         </div>
