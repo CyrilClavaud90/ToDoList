@@ -1,4 +1,5 @@
 .form {
+    display: flex;
     width: 80%;
     margin: 0 auto;
 }
@@ -16,8 +17,6 @@
 }
 
 .form-input::placeholder {
-    padding-left: 1rem;
-    font-size: 1.2rem;
     color: azure;
 }
 
@@ -37,6 +36,10 @@
 
 
 @media screen and (max-width: 768px) {
+    .form {
+        display: block;
+    }
+
     .form-input {
         width: 100%;
         border-radius: 2px;
